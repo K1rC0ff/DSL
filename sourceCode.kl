@@ -1,0 +1,8 @@
+a = 0;
+b = 0;
+Print(b);
+For ( i = 0 , i < 2 , i = i + 1 )
+    a = a + 1,
+    b = ((b - 1)*2)+1;
+Print(a);
+Print(b);
