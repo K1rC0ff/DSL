@@ -1,4 +1,6 @@
-package compiler;
+package compiler.exceptions;
+
+import compiler.Token;
 
 public class ParserException extends Exception {
 
