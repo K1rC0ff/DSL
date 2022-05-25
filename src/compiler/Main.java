@@ -30,7 +30,7 @@ public class Main {
         System.out.println(lexer);
 
         System.out.printf("\n\tSOURCE CODE:\n%s\n\n", testCode);
-        System.out.println("\tRESULT:");
+        System.out.println("\tOUTPUT:");
         int len = 0;
 
         for (Token token: lexer.getTokens()) {
