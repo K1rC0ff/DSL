@@ -1,11 +1,11 @@
-VAR -> "^[a-z]\\w*$"
-DIGIT -> "^0|[1-9][0-9]*$"
+VAR -> "^[a-z_][a-zA-Z0-9_]*$"
+DIGIT -> "^\d*$"
 ASSIGN_OP -> "^=$"
-OP -> "^[-|+|/|*]$"
-L_BC -> "^($"
-R_BC -> "^)$"
+OP -> "^(-|\+|\*|/)$"
+L_BC -> "^\($"
+R_BC -> "^\)$"
 ENDL -> "^;$"
-COMPARE_OP -> "^==|<|>|!=|<=|>=$"
+COMPARE_OP -> "^(~|<|>|!=)$"
 
 IF -> "^If$"
 ELSE -> "^Else$"
@@ -19,8 +19,8 @@ lang -> expr+
 expr -> body ENDL
 body -> expr_assign | if_op | while_op | do_while_op | for_op | print
 expr_value -> value (OP value)*
-value -> (VAR | DIGIT) | infinity
 infinity -> L_BC expr_value R_BC
+value -> (VAR | DIGIT) | infinity
 condition -> VAR COMPARE_OP expr_value
 condition_in_br -> L_BC condition R_BC
 if_op -> IF condition_in_br body+ else_op?
